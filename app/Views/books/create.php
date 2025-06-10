@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-8">
             <h2 class="my-3">Form Tambah Data Buku</h2>
-            <form action="/books/save" method="post">
+            <form action="/books/save" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="form-group row">
                     <label for="judul" class="col-sm-2 col-form-label">Judul</label>
@@ -45,13 +45,19 @@
                 <br>
                 <div class="form-group row">
                     <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control <?= (isset($validation) && $validation->hasError('sampul')) ? 'is-invalid' : '';?>" id="sampul" name="sampul" value="<?= old('sampul'); ?>">
-                        <?php if (isset($validation) && $validation->hasError('sampul')): ?>
-                            <div class="invalid-feedback">
-                                <?= $validation->getError('sampul'); ?>
-                            </div>
-                        <?php endif; ?>
+                    <div class="col-sm-2">
+                        <img src="/img/default.jpg" class="img-thumbnail img-preview" alt="Preview Gambar">
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input <?= (isset($validation) && $validation->hasError('sampul')) ? 'is-invalid' : '';?>" id="sampul" name="sampul" onchange="previewImg()">
+                            <label class="custom-file-label" for="sampul">Upload</label>
+                            <?php if (isset($validation) && $validation->hasError('sampul')): ?>
+                                <div class="invalid-feedback">
+                                    <?= $validation->getError('sampul'); ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
                 <br>

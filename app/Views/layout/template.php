@@ -31,5 +31,21 @@
 <?= $this->renderSection('content'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script>
+      function previewImg() {
+        const sampul = document.querySelector('#sampul');
+        const sampulLabel = document.querySelector('.custom-file-label');
+        const imgPreview = document.querySelector('.img-preview');
+
+        sampulLabel.textContent = sampul.files[0].name;
+
+        const fileSampul = new FileReader();
+        fileSampul.readAsDataURL(sampul.files[0]);
+
+        fileSampul.onload = function(e) {
+          imgPreview.src = e.target.result;
+        }
+      }
+    </script>
   </body>
 </html>
