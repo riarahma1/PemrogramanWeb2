@@ -111,7 +111,7 @@ class Books extends BaseController
     {
         $books = $this->booksModel->find($id);
 
-        if ($books['sampul'] != 'no-cover.jpg') { // Cek apakah sampul bukan gambar default
+        if ($books['sampul'] != 'default.jpg') { // Cek apakah sampul bukan gambar default
             unlink('img/' . $books['sampul']); // Hapus gambar dari folder img
         }
         $this->booksModel->delete($id);
