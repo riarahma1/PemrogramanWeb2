@@ -30,3 +30,5 @@ $routes->get('/books/edit/(:segment)', 'Books::edit/$1');
 $routes->delete('/books/(:num)', 'Books::delete/$1');
 $routes->get('/books/(:any)', 'Books::detail/$1');
 
+$routes->get('/penulis', 'Penulis::index');
+

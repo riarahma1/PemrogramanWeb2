@@ -23,6 +23,7 @@
         <a class="nav-link" href="/about">Tentang</a>
         <a class="nav-link" href="/contact">Hubungi Kami</a>
         <a class="nav-link" href="/books">Buku</a>
+        <a class="nav-link" href="/penulis">Daftar Penulis</a>
       </div>
     </div>
   </div>

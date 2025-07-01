@@ -33,7 +33,7 @@ class PenulisSeeder extends Seeder
         $faker = \Faker\Factory::create('id_ID');
         $data = [];
         for ($i = 0; $i < 100; $i++) {
-            $data = [
+            $data[] = [
                 'nama' => $faker->name,
                 'address' => $faker->address,
                 'email' => $faker->email,
